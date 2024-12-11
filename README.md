@@ -1,6 +1,6 @@
 <h1 align="center">Clock</h1>
 <p align="center">
-  <img src="../public/clock.png" alt="Screenshot" />
+  <img src="./public/clock.png" alt="Screenshot" />
 </p>
 
 ## Description
@@ -17,7 +17,7 @@ Clock is a React application that displays a digital clock whose size can be adj
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/your-username/clock.git
+git clone https://github.com/maximegenand/clock.git
 cd clock
 ```
 
