@@ -1,0 +1,97 @@
+:root {
+  --size: 24px;
+  --clip-clock1: polygon(
+    14.5% 0,
+    85.5% 0,
+    91.75% 25%,
+    73% 100%,
+    27% 100%,
+    8.25% 25%
+  );
+  --clip-clock2: polygon(
+    14.5% 0,
+    85.5% 0,
+    98% 50%,
+    85.5% 100%,
+    27% 100%,
+    8.25% 25%
+  );
+  --clip-clock3: polygon(
+    27% 0,
+    73% 0,
+    85.5% 50%,
+    73% 100%,
+    27% 100%,
+    14.5% 50%
+  );
+}
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size);
+  margin: var(--size);
+  padding: calc(2 * var(--size));
+  border: calc(0.5 * var(--size)) double #ddd;
+  border-radius: var(--size);
+}
+.digit {
+  position: relative;
+  width: calc(4 * var(--size));
+  height: calc(8 * var(--size));
+}
+.digit > div {
+  position: absolute;
+  width: calc(4 * var(--size));
+  height: var(--size);
+  background-color: #ddd;
+  transform-origin: top left;
+}
+.digit-0 {
+  clip-path: var(--clip-clock1);
+}
+.digit-1 {
+  clip-path: var(--clip-clock3);
+  top: calc(3.5 * var(--size));
+}
+.digit-2 {
+  bottom: calc(-1 * var(--size));
+  clip-path: var(--clip-clock1);
+  transform: scaleY(-1);
+}
+.digit-3 {
+  clip-path: var(--clip-clock2);
+  left: 0;
+  transform: rotate(90deg) scaleY(-1);
+}
+.digit-4 {
+  clip-path: var(--clip-clock2);
+  bottom: calc(-1 * var(--size));
+  left: 0;
+  transform: rotate(90deg) scaleY(-1) scaleX(-1);
+}
+.digit-5 {
+  clip-path: var(--clip-clock2);
+  left: calc(4 * var(--size));
+  transform: rotate(90deg);
+}
+.digit-6 {
+  clip-path: var(--clip-clock2);
+  bottom: calc(-1 * var(--size));
+  left: calc(4 * var(--size));
+  transform: rotate(90deg) scaleX(-1);
+}
+.colon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--size);
+  height: calc(3 * var(--size));
+  padding: calc(0.5 * var(--size));
+}
+.colon > div {
+  width: var(--size);
+  height: var(--size);
+  background-color: #ddd;
+  /*clip-path: polygon(0 50%, 50% 100%, 100% 50%, 50% 0);*/
+}
